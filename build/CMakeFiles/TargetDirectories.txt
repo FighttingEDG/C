@@ -1,0 +1,4 @@
+/Users/jevonsmac/Desktop/project/demo/C/build/CMakeFiles/q2015_41.dir
+/Users/jevonsmac/Desktop/project/demo/C/build/CMakeFiles/test_main.dir
+/Users/jevonsmac/Desktop/project/demo/C/build/CMakeFiles/edit_cache.dir
+/Users/jevonsmac/Desktop/project/demo/C/build/CMakeFiles/rebuild_cache.dir
