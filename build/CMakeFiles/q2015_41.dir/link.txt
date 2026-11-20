@@ -1,1 +1,0 @@
-/usr/bin/clang -g -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/q2015_41.dir/408_2015/main.c.o CMakeFiles/q2015_41.dir/408_2015/Answer.c.o -o q2015_41
