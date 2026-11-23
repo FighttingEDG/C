@@ -10,10 +10,11 @@ struct Node{
 void quchong(struct Node *head,int n){
     // 创建n+1长度的标记数组(6)
     int *mark= calloc((size_t)n+1,sizeof(int));
+    // 上一结点
     struct Node *prev = head -> link;
     // 遍历单链表
     // 其实算法里只要前一个和当前结点
-    while(head->link != NULL){
+    while(prev->link != NULL){
         // 前一个结点
         // 从真实第一结点开始，就是a开始，把每个结点的指针赋值给方法里的临时指针变量
         struct Node *cur = prev -> link;
@@ -22,14 +23,21 @@ void quchong(struct Node *head,int n){
         // 如果数组值已经是1
         if(mark[temp] == 1){
             // 就把当前链表位置结点删掉，然后把上一结点的指针改为下一节点
+            // 相当于删除当前结点
             prev->link = cur->link;
         }else{
             // 然后把所有的标记数组对应下标对应的数组值都改为1
             mark[temp] = 1;
+            // 下一轮前驱
+            prev = cur; 
         }
-        // 然后就是下一结点进循环了，我现在看的话我觉得while的条件还是head，因为没人改变它啊
-
     }
+    printf("mark[0..%d]: ", n);
+    for (int i = 0; i <= n; i++) {
+        printf("%d ", mark[i]);
+    }
+    printf("\n");
+    free(mark);
     // printf("%d\n",mark[0]);
 }
 void main(){
@@ -41,4 +49,9 @@ void main(){
     struct Node a = {21,&b};
     struct Node head = {0,&a};
     quchong(&head,6);
+    printf("去重后的链表: ");
+    for (struct Node *p = head.link; p != NULL; p = p->link) {
+        printf("%d ", p->data);
+    }
+    printf("\n");
 }
